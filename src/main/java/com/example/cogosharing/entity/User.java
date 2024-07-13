@@ -1,5 +1,6 @@
 package com.example.cogosharing.entity;
 
+import com.example.cogosharing.util.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Table(name = "user")
-public class User {
+public class User extends BaseTimeEntity {
 
     @Id
     @Column(name = "user_id", unique = true, nullable = false)

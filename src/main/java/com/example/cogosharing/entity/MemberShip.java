@@ -2,6 +2,7 @@ package com.example.cogosharing.entity;
 
 
 import com.example.cogosharing.enums.MemberType;
+import com.example.cogosharing.util.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Table(name = "member_ship")
-public class MemberShip {
+public class MemberShip extends BaseTimeEntity {
     //맴버 타입에 대한 정보를 가짐
 
 
