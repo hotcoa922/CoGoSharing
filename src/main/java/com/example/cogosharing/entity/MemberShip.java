@@ -1,7 +1,7 @@
 package com.example.cogosharing.entity;
 
 
-import com.example.cogosharing.enums.MemberType;
+import com.example.cogosharing.enums.MemberShipType;
 import com.example.cogosharing.util.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,14 +21,11 @@ public class MemberShip extends BaseTimeEntity {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "member_type", nullable = false)
-    private MemberType memberType;
+    @Column(name = "membership_type", nullable = false)
+    private MemberShipType memberShipType;
 
-    @Column(name = "member_id", nullable = false)
-    private Long memberId;
-
-
-
+    @Column(name = "memberShip_id", nullable = false)
+    private Long memberShipId;  //커플 혹은 그룹 id
 
     //User - Membership = 1:N
     @ManyToOne(fetch = FetchType.LAZY)
@@ -38,10 +35,3 @@ public class MemberShip extends BaseTimeEntity {
 }
 
 
-//Membership {
-//    BIGINT membership_id PK "멤버십 고유 ID"
-//    ENUM member_type "멤버 타입 (커플 또는 그룹)"
-//    BIGINT member_id "멤버의 ID (커플 또는 그룹 ID)"
-//    BIGINT user_id FK "사용자 ID"
-//    TIMESTAMP joined_at "멤버십 생성 시각"
-//}
