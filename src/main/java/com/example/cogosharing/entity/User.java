@@ -1,5 +1,6 @@
 package com.example.cogosharing.entity;
 
+import com.example.cogosharing.util.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Table(name = "user")
-public class User {
+public class User extends BaseTimeEntity {
 
     @Id
     @Column(name = "user_id", unique = true, nullable = false)
@@ -29,9 +30,13 @@ public class User {
     private String password;
 
 
-    //User - Membership = 1:N
+    //User - Membership = 1 : N
     @OneToMany( mappedBy = "user")
     private List<MemberShip> memberShips = new ArrayList<>();
+
+    //User - Participant = 1 : N
+    @OneToMany( mappedBy = "participant")
+    private List<Participant> participants = new ArrayList<>();
 }
 
 
