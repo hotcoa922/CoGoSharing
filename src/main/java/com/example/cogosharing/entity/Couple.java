@@ -23,7 +23,7 @@ public class Couple extends BaseTimeEntity {
     @Column(name = "couple_name")
     private String coupleName;
 
-    //Couple : MemberShip = 1 : N
+    //Couple - MemberShip = 1 : N
     //사실 커플은 N=2이지만 편의상 1대 다 관계로 생각
     @OneToMany(mappedBy = "couple")
     private List<MemberShip> memberShips = new ArrayList<>();

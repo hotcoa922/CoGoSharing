@@ -24,7 +24,7 @@ public class Group extends BaseTimeEntity {
     @Column(name = "group_name")
     private String groupName;
 
-    //Group : MemberShip = 1 : N
+    //Group - MemberShip = 1 : N
     @OneToMany(mappedBy = "group")
     private List<MemberShip> memberShips = new ArrayList<>();
 }

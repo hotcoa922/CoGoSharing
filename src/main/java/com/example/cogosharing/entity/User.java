@@ -30,9 +30,13 @@ public class User extends BaseTimeEntity {
     private String password;
 
 
-    //User - Membership = 1:N
+    //User - Membership = 1 : N
     @OneToMany( mappedBy = "user")
     private List<MemberShip> memberShips = new ArrayList<>();
+
+    //User - Participant = 1 : N
+    @OneToMany( mappedBy = "participant")
+    private List<Participant> participants = new ArrayList<>();
 }
 
 
