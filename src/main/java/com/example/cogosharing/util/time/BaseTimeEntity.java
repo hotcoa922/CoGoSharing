@@ -1,4 +1,4 @@
-package com.example.cogosharing.util;
+package com.example.cogosharing.util.time;
 
 
 import jakarta.persistence.Column;
