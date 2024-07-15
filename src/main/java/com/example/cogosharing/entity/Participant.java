@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @NoArgsConstructor
-@Table(name = "participants")
+@Table(name = "participant")
 public class Participant extends BaseTimeEntity {
 
     // Participant 엔티티는 사용자(User) <-> (Event) 간의 관계를 관리하는 중간테이블
