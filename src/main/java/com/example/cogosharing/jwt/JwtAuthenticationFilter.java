@@ -1,6 +1,6 @@
 package com.example.cogosharing.jwt;
 
-import com.example.cogosharing.service.CustomUserDetailsService;
+import com.example.cogosharing.service.userdetail.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
