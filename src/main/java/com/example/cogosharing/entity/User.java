@@ -2,6 +2,7 @@ package com.example.cogosharing.entity;
 
 import com.example.cogosharing.util.time.BaseTimeEntity;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -37,6 +38,13 @@ public class User extends BaseTimeEntity {
     //User - Participant = 1 : N
     @OneToMany( mappedBy = "participant")
     private List<Participant> participants = new ArrayList<>();
+
+    @Builder
+    public User(String userName, String email, String password) {
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
 }
 
 
