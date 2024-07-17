@@ -12,10 +12,10 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     @Value("${app.jwtSecret}")
-    private String jwtSecret;
+    private String jwtSecret;   //토큰 서명 및 검증
 
     @Value("${app.jwtExpirationInMs}")
-    private int jwtExpirationInMs;
+    private int jwtExpirationInMs;  //토큰 만료시간
 
     public String createToken(String username, String email) {
         Claims claims = Jwts.claims().setSubject(username);

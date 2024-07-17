@@ -1,6 +1,9 @@
 package com.example.cogosharing.config;
 
 
+import com.example.cogosharing.jwt.JwtAuthenticationEntryPoint;
+import com.example.cogosharing.jwt.JwtAuthenticationFilter;
+import com.example.cogosharing.service.userdetail.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
