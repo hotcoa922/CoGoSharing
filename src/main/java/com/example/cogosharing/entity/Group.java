@@ -3,6 +3,7 @@ package com.example.cogosharing.entity;
 
 import com.example.cogosharing.util.time.BaseTimeEntity;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,4 +28,9 @@ public class Group extends BaseTimeEntity {
     //Group - MemberShip = 1 : N
     @OneToMany(mappedBy = "group")
     private List<MemberShip> memberShips = new ArrayList<>();
+
+    @Builder
+    public Group(String groupName) {
+        this.groupName = groupName;
+    }
 }
