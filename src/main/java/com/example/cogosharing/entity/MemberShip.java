@@ -4,6 +4,7 @@ package com.example.cogosharing.entity;
 import com.example.cogosharing.enums.MemberShipType;
 import com.example.cogosharing.util.time.BaseTimeEntity;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -44,6 +45,14 @@ public class MemberShip extends BaseTimeEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id", nullable = true)
     private Group group;
+
+    @Builder
+    public MemberShip(MemberShipType memberShipType, User user, Couple couple, Group group) {
+        this.memberShipType = memberShipType;
+        this.user = user;
+        this.couple = couple;
+        this.group = group;
+    }
 
 }
 
