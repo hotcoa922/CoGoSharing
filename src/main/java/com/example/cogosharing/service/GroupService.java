@@ -54,4 +54,15 @@ public class GroupService {
         return memberShipRepository.save(memberShip);
     }
 
+    //그룹 탈퇴
+    @Transactional
+    public void leaveGroup(MemberShipRequestDto memberShipRequestDto) {
+        User user = userRepository.findById(memberShipRequestDto.getUserId())
+                .orElseThrow(() -> new RuntimeException("사용자 없음"));
+        Group group = groupRepository.findById(memberShipRequestDto.getGroupId())
+                .orElseThrow(() -> new RuntimeException("그룹 없음"));
+
+        memberShipRepository.deleteByUserAndGroup(user, group);
+    }
+
 }
